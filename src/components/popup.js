@@ -61,7 +61,6 @@ export default class Popup extends React.Component {
 			removePopup
 		} = this.props
 
-		console.log('RENDER')
 		return(
 			<Bg>
 				<LeftArrowContainer>

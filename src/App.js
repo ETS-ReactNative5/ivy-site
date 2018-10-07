@@ -37,7 +37,7 @@ class App extends React.Component {
     	return (
 			<div>
 			{
-				this.state.popupImage && <Popup imageIndex={this.state.popupImage} {...gridProps}/>
+				this.state.popupImage !== null && <Popup imageIndex={this.state.popupImage} {...gridProps}/>
 			}
 			<Header/>
 			<Wrapper>
