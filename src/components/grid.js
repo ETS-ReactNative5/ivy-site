@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Image from "react-graceful-image";
 
 const PhotoGrid = styled.div`
 	background: antiquewhite;
@@ -23,6 +22,11 @@ const Column = styled.div`
 	}
 `
 
+const ImgWrapper = styled.div`
+	background: ghostwhite;
+	cursor: pointer;
+`
+
 export default class Grid extends React.Component {
 	render() {
 		return(
@@ -30,21 +34,21 @@ export default class Grid extends React.Component {
 				<Column>
 				{
 					this.props.compressed.filter((_,i) => i % 3 === 0).map(img => 
-						<img src={img.url}/>
+						<ImgWrapper onClick={() => this.props.triggerPopup(img.id)}><img src={img.url}/></ImgWrapper>
 					)
 				}
 				</Column>
 				<Column>
 				{
 					this.props.compressed.slice(1).filter((_,i) => i % 3 === 0).map(img => 
-						<img src={img.url}/>
+						<ImgWrapper onClick={() => this.props.triggerPopup(img.id)}><img src={img.url}/></ImgWrapper>
 					)
 				}
 				</Column>
 				<Column>
 				{
 					this.props.compressed.slice(2).filter((_,i) => i % 3 === 0).map(img => 
-						<img src={img.url}/>
+						<ImgWrapper onClick={() => this.props.triggerPopup(img.id)}><img src={img.url}/></ImgWrapper>
 					)
 				}
 				</Column>
