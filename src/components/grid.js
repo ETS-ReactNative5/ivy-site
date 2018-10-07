@@ -2,19 +2,26 @@ import React from 'react'
 import styled from 'styled-components'
 
 const PhotoGrid = styled.div`
-	background: antiquewhite;
-
 	display: flex;
 	flex-wrap: wrap;
 	padding: 0 5px;
 `
 
 const Column = styled.div`
-	flex: 33.33%;
-	max-width: 33.33%;
+	flex: 32%;
+	max-width: 32%;
 	padding: 0 5px;
 	& img {
-		margin-bottom: 3px;
+		margin-bottom: 9px;
+		max-width: 100%;
+	}
+	@media (max-width: 950px) {
+		flex: 31%;
+		max-width: 31%;	
+	}
+	@media (max-width: 547px) {
+		flex: 30%;
+		max-width: 30%;
 	}
 	@media (max-width: 500px) {
 		flex: 100%;
@@ -23,7 +30,7 @@ const Column = styled.div`
 `
 
 const ImgWrapper = styled.div`
-	background: ghostwhite;
+	margin: 3px;
 	cursor: pointer;
 `
 
