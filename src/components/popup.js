@@ -10,7 +10,7 @@ const Bg = styled.div`
 	height: 100vh;
 	position: fixed;
 	z-index: 10;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0,0,0,0.80);
 	display: grid;
 	grid-template-columns: 10vw 1fr 10vw;
 	grid-template-rows: 1fr;

@@ -14,7 +14,8 @@ const Wrapper = styled.div`
 	max-width: 100vw;
 	padding-left: 10%;
 	padding-right: 10%;
-	background: palevioletred;
+	background: #f4efec;
+	min-height: 100vh; 
 `
 
 const GridWrapper = styled.div`

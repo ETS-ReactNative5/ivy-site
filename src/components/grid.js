@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const PhotoGrid = styled.div`
-	background: green;
-
 	display: flex;
 	flex-wrap: wrap;
 	padding: 0 5px;
@@ -14,7 +12,7 @@ const Column = styled.div`
 	max-width: 32%;
 	padding: 0 5px;
 	& img {
-		margin-bottom: 3px;
+		margin-bottom: 9px;
 		max-width: 100%;
 	}
 	@media (max-width: 950px) {
@@ -32,7 +30,6 @@ const Column = styled.div`
 `
 
 const ImgWrapper = styled.div`
-	background: black;
 	margin: 3px;
 	cursor: pointer;
 `
