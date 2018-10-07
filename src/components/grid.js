@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import TrackVisibility from 'react-on-screen'
 
 const PhotoGrid = styled.div`
 	display: flex;
@@ -32,6 +33,9 @@ const Column = styled.div`
 const ImgWrapper = styled.div`
 	margin: 3px;
 	cursor: pointer;
+
+	opacity: ${ props => props.visible ? '1' : '0'};
+	transition: opacity 1s ease;
 `
 
 export default class Grid extends React.Component {
@@ -41,21 +45,33 @@ export default class Grid extends React.Component {
 				<Column>
 				{
 					this.props.compressed.filter((_,i) => i % 3 === 0).map(img => 
-						<ImgWrapper onClick={() => this.props.triggerPopup(img.id)}><img src={img.url}/></ImgWrapper>
+						<TrackVisibility once>
+						{
+							({isVisible}) => <ImgWrapper visible={isVisible} onClick={() => this.props.triggerPopup(img.id)}><img src={img.url}/></ImgWrapper>
+						}
+						</TrackVisibility>
 					)
 				}
 				</Column>
 				<Column>
 				{
 					this.props.compressed.slice(1).filter((_,i) => i % 3 === 0).map(img => 
-						<ImgWrapper onClick={() => this.props.triggerPopup(img.id)}><img src={img.url}/></ImgWrapper>
+						<TrackVisibility once>
+						{
+							({isVisible}) => <ImgWrapper visible={isVisible} onClick={() => this.props.triggerPopup(img.id)}><img src={img.url}/></ImgWrapper>
+						}
+						</TrackVisibility>
 					)
 				}
 				</Column>
 				<Column>
 				{
 					this.props.compressed.slice(2).filter((_,i) => i % 3 === 0).map(img => 
-						<ImgWrapper onClick={() => this.props.triggerPopup(img.id)}><img src={img.url}/></ImgWrapper>
+						<TrackVisibility once>
+						{
+							({isVisible}) => <ImgWrapper visible={isVisible} onClick={() => this.props.triggerPopup(img.id)}><img src={img.url}/></ImgWrapper>
+						}
+						</TrackVisibility>
 					)
 				}
 				</Column>
