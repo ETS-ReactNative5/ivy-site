@@ -17,6 +17,14 @@ const Column = styled.div`
 		margin-bottom: 3px;
 		max-width: 100%;
 	}
+	@media (max-width: 950px) {
+		flex: 31%;
+		max-width: 31%;	
+	}
+	@media (max-width: 547px) {
+		flex: 30%;
+		max-width: 30%;
+	}
 	@media (max-width: 500px) {
 		flex: 100%;
 		max-width: 100%;

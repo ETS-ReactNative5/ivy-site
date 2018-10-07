@@ -36,14 +36,14 @@ class App extends React.Component {
 		}
     	return (
 			<div>
+			{
+				this.state.popupImage && <Popup imageIndex={this.state.popupImage} {...gridProps}/>
+			}
 			<Header/>
 			<Wrapper>
 				<GridWrapper>
 					<Grid photos={photos} compressed={compressedPhotos} {...gridProps} />
 				</GridWrapper>
-				{
-					this.state.popupImage && <Popup imageIndex={this.state.popupImage} {...gridProps}/>
-				}
 			</Wrapper>
 			</div>
     	)

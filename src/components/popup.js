@@ -16,8 +16,12 @@ const Bg = styled.div`
 `
 
 const PhotoColumn = styled.div`
-	max-width: 30vw;
+	max-width: 80vw;
 	background: rebeccapurple;
+	& img {
+		max-height: 90vh;
+		max-width: 80vw;
+	}
 `
 
 const Img = styled.div`
@@ -36,7 +40,7 @@ export default class Popup extends React.Component {
 		return(
 			<Bg>
 				<PhotoColumn>
-					{ imageIndex && photos[imageIndex] && <Img src={photos[imageIndex]}/> }
+					{ <img src={photos[imageIndex].url}/> }
 				</PhotoColumn>
 			</Bg>
 		)
