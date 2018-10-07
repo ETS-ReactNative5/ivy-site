@@ -27,7 +27,7 @@ class App extends React.Component {
 	}
 
 	triggerPopup = (imageIndex) => this.setState({popupImage: imageIndex}, console.log('state', this.state))
-	removePopup = () => this.this.setState({popupImage: null})
+	removePopup = () => this.setState({popupImage: null})
 
   	render() {
 		const gridProps = {
