@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import { photos } from '../images/portfolio'
 
+import closeIcon from '../images/close.png'
+
 const Bg = styled.div`
 	width: 100vw;
 	height: 100vh;
@@ -10,7 +12,7 @@ const Bg = styled.div`
 	z-index: 10;
 	background: rgba(0,0,0,0.7);
 	display: grid;
-	grid-template-columns: 100px 1fr 100px;
+	grid-template-columns: 10vw 1fr 10vw;
 	grid-template-rows: 1fr;
 	align-items: center;
 	justify-items: center;
@@ -18,7 +20,6 @@ const Bg = styled.div`
 
 const PhotoColumn = styled.div`
 	max-width: 80vw;
-	background: rebeccapurple;
 	& img {
 		max-height: 90vh;
 		max-width: 80vw;
@@ -28,21 +29,38 @@ const PhotoColumn = styled.div`
 const ArrowContainer = styled.div`
 	width: 100%;
 	height: 100%;
-	background: red;
-`
-
-const LeftArrowContainer = styled(ArrowContainer)`
-	display: grid;
-	grid-template: 1fr / 1fr;
-	align-items: center;
-	justify-items: center;
-`
-
-const RightArrowContainer = styled(ArrowContainer)`
 	display: grid;
 	grid-template: 50px auto / 1fr;
 	align-items: center;
 	justify-items: center;
+`
+
+const Arrow = styled.div`
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+	padding: 7%;
+	cursor: pointer;
+`
+
+const RightArrow = styled(Arrow)`
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+`
+
+const LeftArrow = styled(Arrow)`
+	transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+`
+
+const CloseButton = styled.div`
+	width: 25px;
+	height: 25px;
+	background-image: url(${closeIcon});
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	cursor: pointer;
 `
 
 export default class Popup extends React.Component {
@@ -63,16 +81,17 @@ export default class Popup extends React.Component {
 
 		return(
 			<Bg>
-				<LeftArrowContainer>
-					<button onClick={() => triggerPopup(this.getPreviousPhoto(imageIndex))}>back</button>
-				</LeftArrowContainer>
+				<ArrowContainer>
+					<div/>
+					<LeftArrow onClick={() => triggerPopup(this.getPreviousPhoto(imageIndex))}/>
+				</ArrowContainer>
 				<PhotoColumn>
 					{ <img src={photos[imageIndex].url}/> }
 				</PhotoColumn>
-				<RightArrowContainer>
-					<button onClick={removePopup}>exit</button>
-					<button onClick={() => triggerPopup(this.getNextPhoto(imageIndex))}>forward</button>
-				</RightArrowContainer>
+				<ArrowContainer>
+					<CloseButton onClick={removePopup}/>
+					<RightArrow onClick={() => triggerPopup(this.getNextPhoto(imageIndex))}/>
+				</ArrowContainer>
 			</Bg>
 		)
 	}
