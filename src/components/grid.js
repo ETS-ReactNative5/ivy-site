@@ -36,6 +36,11 @@ const ImgWrapper = styled.div`
 
 	opacity: ${ props => props.visible ? '1' : '0'};
 	transition: opacity 1s ease;
+	transform: translateY(0px);
+	&:hover {
+		transform: translateY(-10px);
+	}
+	transition: all 1s ease;
 `
 
 export default class Grid extends React.Component {
