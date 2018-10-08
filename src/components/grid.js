@@ -13,7 +13,7 @@ const Column = styled.div`
 	max-width: 32%;
 	padding: 0 5px;
 	& img {
-		margin-bottom: 9px;
+		margin-bottom: 35px;
 		max-width: 100%;
 	}
 	@media (max-width: 950px) {
@@ -31,7 +31,7 @@ const Column = styled.div`
 `
 
 const ImgWrapper = styled.div`
-	margin: 3px;
+	margin: 16px;
 	cursor: pointer;
 
 	opacity: ${ props => props.visible ? '1' : '0'};
