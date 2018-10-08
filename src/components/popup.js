@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { photos } from '../images/portfolio'
+import { compressedPhotos } from '../images/portfolio'
 
 import closeIcon from '../images/close.png'
 
@@ -69,7 +69,7 @@ export default class Popup extends React.Component {
 		else return current - 1
 	}
 	getNextPhoto = (current) => {
-		if(current + 1 >= photos.length) return current
+		if(current + 1 >= compressedPhotos.length) return current
 		else return current + 1
 	}
 	render() {
@@ -86,7 +86,7 @@ export default class Popup extends React.Component {
 					<LeftArrow onClick={() => triggerPopup(this.getPreviousPhoto(imageIndex))}/>
 				</ArrowContainer>
 				<PhotoColumn>
-					{ <img src={photos[imageIndex].url}/> }
+					{ <img src={compressedPhotos[imageIndex].url}/> }
 				</PhotoColumn>
 				<ArrowContainer>
 					<CloseButton onClick={removePopup}/>

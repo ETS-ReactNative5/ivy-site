@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import {photos, compressedPhotos} from './images/portfolio'
+import {compressedPhotos} from './images/portfolio'
 
 import Header from './components/header'
 import Grid from './components/grid'
@@ -43,7 +43,7 @@ class App extends React.Component {
 			<Header/>
 			<Wrapper>
 				<GridWrapper>
-					<Grid photos={photos} compressed={compressedPhotos} {...gridProps} />
+					<Grid compressed={compressedPhotos} {...gridProps} />
 				</GridWrapper>
 			</Wrapper>
 			</div>

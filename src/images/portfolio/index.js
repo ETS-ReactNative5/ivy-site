@@ -1,40 +1,3 @@
-import _1 from './1.jpg'
-import _2 from './2.jpg'
-import _3 from './3.jpg'
-import _4 from './4.jpg'
-import _5 from './5.jpg'
-import _6 from './6.jpg'
-import _7 from './7.jpg'
-import _8 from './8.jpg'
-import _9 from './9.jpg'
-import _10 from './10.jpg'
-import _11 from './11.jpg'
-import _12 from './12.jpg'
-import _13 from './13.jpg'
-import _14 from './14.jpg'
-import _15 from './15.jpg'
-import _16 from './16.jpg'
-import _17 from './17.jpg'
-import _18 from './18.jpg'
-import _19 from './19.jpg'
-import _20 from './20.jpg'
-import _21 from './21.jpg'
-import _22 from './22.jpg'
-import _23 from './23.jpg'
-import _24 from './24.jpg'
-import _25 from './25.jpg'
-import _26 from './26.jpg'
-import _27 from './27.jpg'
-import _28 from './28.jpg'
-import _29 from './29.jpg'
-import _30 from './30.jpg'
-import _31 from './31.jpg'
-import _32 from './32.jpg'
-import _33 from './33.jpg'
-import _34 from './34.jpg'
-import _35 from './35.jpg'
-import _36 from './36.jpg'
-import _37 from './37.jpg'
 
 import compressed_1 from './compressed/1.jpg'
 import compressed_2 from './compressed/2.jpg'
@@ -73,53 +36,6 @@ import compressed_34 from './compressed/34.jpg'
 import compressed_35 from './compressed/35.jpg'
 import compressed_36 from './compressed/36.jpg'
 import compressed_37 from './compressed/37.jpg'
-
-const p = [
-	_1,
-	_2,
-	_3,
-	_4,
-	_5,
-	_6,
-	_7,
-	_8,
-	_9,
-	_10,
-	_11,
-	_12,
-	_13,
-	_14,
-	_15,
-	_16,
-	_17,
-	_18,
-	_19,
-	_20,
-	_21,
-	_22,
-	_23,
-	_24,
-	_25,
-	_26,
-	_27,
-	_28,
-	_29,
-	_30,
-	_31,
-	_32,
-	_33,
-	_34,
-	_35,
-	_36,
-	_37,
-]
-
-export const photos = p.map((p,i) => {
-	return {
-		url: p, 
-		id: i
-	}
-})
 
 const c = [
 	compressed_1,
