@@ -37,7 +37,7 @@ export default ({ data }) => {
     <React.Fragment>
       {data.allAirtable.nodes.map(node => (
         <div>
-          <p>{node.data.name}</p>
+          <h1>{node.data.name}</h1>
           <img src={node.data.photo[0].thumbnails.small.url} />
         </div>
       ))}
