@@ -5,19 +5,10 @@ require("dotenv").config({
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-source-airtable`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        apiKey: process.env.AIRTABLE_API_KEY, // may instead specify via env, see below
-        tables: [
-          {
-            baseId: process.env.AIRTABLE_BASE_ID,
-            tableName: process.env.AIRTABLE_TABLE_NAME,
-            // tableView: `YOUR_TABLE_VIEW_NAME`, // optional
-            // queryName: `OPTIONAL_NAME_TO_IDENTIFY_TABLE`, // optional
-            // mapping: { `CASE_SENSITIVE_COLUMN_NAME`: `VALUE_FORMAT` }, // optional, e.g. "text/markdown", "fileNode"
-            // tableLinks: [`CASE`, `SENSITIVE`, `COLUMN`, `NAMES`] // optional, for deep linking to records across tables.
-          },
-        ],
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],
