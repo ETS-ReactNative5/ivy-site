@@ -15,7 +15,7 @@ const DesktopLayout = styled(Layout)`
 `
 
 const MobileLayout = styled.div`
-  background: lightslategrey;
+  background: lightskyblue;
   height: 25px;
 `
 
