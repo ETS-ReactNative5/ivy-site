@@ -1,46 +1,81 @@
 import React from "react"
-import { graphql } from "gatsby"
+import Layout from "src/components/layout"
 
-export const query = graphql`
-  query {
-    allAirtable {
-      nodes {
-        data {
-          name
-          photo {
-            thumbnails {
-              full {
-                height
-                url
-                width
-              }
-              small {
-                height
-                url
-                width
-              }
-              large {
-                height
-                url
-                width
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
-export default ({ data }) => {
+export default () => {
   return (
-    <React.Fragment>
-      {data.allAirtable.nodes.map(node => (
-        <div>
-          <h1>{node.data.name}</h1>
-          <img src={node.data.photo[0].thumbnails.small.url} />
-        </div>
-      ))}
-    </React.Fragment>
+    <Layout>
+      <h1>begin</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>siusdis</h1>
+      <h1>end</h1>
+    </Layout>
   )
 }
