@@ -1,11 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "src/components/layout"
+import { navigate } from "gatsby"
 
 export default () => {
-  return (
-    <Layout>
-      <h1>begin</h1>
-      <h1>end</h1>
-    </Layout>
-  )
+  useEffect(() => {
+    navigate("/about")
+  }, [])
+  return <Layout></Layout>
 }
