@@ -1,6 +1,7 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styled from "styled-components"
 import useBreakpoint from "src/hooks/useBreakpoint"
+import { Link } from "gatsby"
 
 const Layout = styled.div`
   width: 100%;
@@ -21,8 +22,22 @@ const MobileLayout = styled.div`
 export default () => {
   const { breakpoint } = useBreakpoint()
   if (breakpoint === "xs" || breakpoint === "sm") {
-    return <MobileLayout />
+    return (
+      <MobileLayout>
+        <Link to="/aspb">aspb</Link>
+        <Link to="/unum">unum</Link>
+        <Link to="/about">about</Link>
+        <Link to="/photography">photography</Link>
+      </MobileLayout>
+    )
   } else {
-    return <DesktopLayout />
+    return (
+      <DesktopLayout>
+        <Link to="/aspb">aspb</Link>
+        <Link to="/unum">unum</Link>
+        <Link to="/about">about</Link>
+        <Link to="/photography">photography</Link>
+      </DesktopLayout>
+    )
   }
 }
