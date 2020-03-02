@@ -17,15 +17,18 @@ const getSizeFromWidth = width => {
 
 export default () => {
   const [size, setSize] = useState(
-    getSizeFromWidth(window && window.innerWidth)
+    getSizeFromWidth(typeof window !== `undefined` ? window.innerWidth : 321)
   )
   useEffect(() => {
     const calcSize = throttle(() => {
-      setSize(getSizeFromWidth(window && window.innerWidth))
+      setSize(
+        getSizeFromWidth(typeof window !== `undefined` && window.innerWidth)
+      )
     })
-    window && window.addEventListener("resize", calcSize)
+    typeof window !== `undefined` && window.addEventListener("resize", calcSize)
     return () => {
-      window && window.removeEventListener("resize", calcSize)
+      typeof window !== `undefined` &&
+        window.removeEventListener("resize", calcSize)
     }
   }, [])
   return { breakpoint: size }
