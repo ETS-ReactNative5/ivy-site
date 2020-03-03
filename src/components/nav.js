@@ -1,54 +1,43 @@
-import React, { useEffect, useMemo, useState } from "react"
+import React from "react"
 import styled from "styled-components"
-import useBreakpoint from "src/hooks/useBreakpoint"
 import { Link } from "gatsby"
 
-const Layout = styled.div`
+const BaseLayout = styled.div`
   width: 100%;
 `
 
-const DesktopLayout = styled(Layout)`
+const DesktopLayout = styled(BaseLayout)`
   height: 400px;
   background: lightcoral;
   position: sticky;
   top: 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
-const MobileLayout = styled.div`
+const MobileLayout = styled(BaseLayout)`
   background: lightskyblue;
   height: 25px;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `
 
+const Layout = ({ children }) => (
+  <>
+    <MobileLayout>{children}</MobileLayout>
+    <DesktopLayout>{children}</DesktopLayout>
+  </>
+)
+
 export default () => {
-  const { breakpoint } = useBreakpoint()
-  const [windowSize, setWindowSize] = useState(null)
-
-  useEffect(() => {
-    setWindowSize(window.innerWidth)
-  }, [])
-
-  return useMemo(() => {
-    console.log("BREAKK", breakpoint)
-    console.log("WIN SIZE", windowSize)
-
-    if (windowSize < 768 || breakpoint === "xs" || breakpoint === "sm") {
-      return (
-        <MobileLayout>
-          <Link to="/aspb">aspb</Link>
-          <Link to="/unum">unum</Link>
-          <Link to="/about">about</Link>
-          <Link to="/photography">photography</Link>
-        </MobileLayout>
-      )
-    } else {
-      return (
-        <DesktopLayout>
-          <Link to="/aspb">aspb</Link>
-          <Link to="/unum">unum</Link>
-          <Link to="/about">about</Link>
-          <Link to="/photography">photography</Link>
-        </DesktopLayout>
-      )
-    }
-  }, [breakpoint, windowSize])
+  return (
+    <Layout>
+      <Link to="/aspb">aspb</Link>
+      <Link to="/unum">unum</Link>
+      <Link to="/about">about</Link>
+      <Link to="/photography">photography</Link>
+    </Layout>
+  )
 }
