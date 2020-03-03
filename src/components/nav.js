@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import styled from "styled-components"
 import useBreakpoint from "src/hooks/useBreakpoint"
 import { Link } from "gatsby"
@@ -21,12 +21,17 @@ const MobileLayout = styled.div`
 
 export default () => {
   const { breakpoint } = useBreakpoint()
+  const [windowSize, setWindowSize] = useState(null)
+
   useEffect(() => {
-    console.log("BRk", breakpoint)
-  }, [breakpoint])
+    setWindowSize(window.innerWidth)
+  }, [])
+
   return useMemo(() => {
     console.log("BREAKK", breakpoint)
-    if (breakpoint === "xs" || breakpoint === "sm") {
+    console.log("WIN SIZE", windowSize)
+
+    if (windowSize < 768 || breakpoint === "xs" || breakpoint === "sm") {
       return (
         <MobileLayout>
           <Link to="/aspb">aspb</Link>
@@ -45,5 +50,5 @@ export default () => {
         </DesktopLayout>
       )
     }
-  }, [breakpoint])
+  }, [breakpoint, windowSize])
 }
