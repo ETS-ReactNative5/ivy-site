@@ -20,6 +20,9 @@ export default () => {
     getSizeFromWidth(typeof window !== `undefined` ? window.innerWidth : 321)
   )
   useEffect(() => {
+    setSize(
+      getSizeFromWidth(typeof window !== `undefined` && window.innerWidth)
+    )
     const calcSize = throttle(() => {
       setSize(
         getSizeFromWidth(typeof window !== `undefined` && window.innerWidth)
