@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useLayoutEffect } from "react"
 import throttle from "src/utils/throttle"
 
 const getSizeFromWidth = width => {
@@ -19,7 +19,11 @@ export default () => {
   const [size, setSize] = useState(
     getSizeFromWidth(typeof window !== `undefined` ? window.innerWidth : 321)
   )
+  useLayoutEffect(() => {
+    console.log('LAYOUT EFFECT RAN')
+  }, [])
   useEffect(() => {
+    console.log('EFFECT RAN')
     setSize(
       getSizeFromWidth(typeof window !== `undefined` && window.innerWidth)
     )
