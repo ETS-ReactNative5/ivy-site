@@ -21,14 +21,22 @@ export default () => {
   )
   useLayoutEffect(() => {
     console.log("LAYOUT EFFECT RAN")
-    console.log("LAYOUT", typeof window)
+    console.log(
+      "LAYOUT",
+      window.innerWidth,
+      getSizeFromWidth(window.innerWidth)
+    )
     setSize(
       getSizeFromWidth(typeof window !== `undefined` && window.innerWidth)
     )
   }, [])
   useEffect(() => {
     console.log("EFFECT RAN")
-    console.log("EFFECT", typeof window)
+    console.log(
+      "EFFECT",
+      window.innerWidth,
+      getSizeFromWidth(window.innerWidth)
+    )
     setSize(
       getSizeFromWidth(typeof window !== `undefined` && window.innerWidth)
     )
