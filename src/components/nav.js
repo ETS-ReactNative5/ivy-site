@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import useBreakpoint from "src/hooks/useBreakpoint"
 import { Link } from "gatsby"
@@ -21,6 +21,9 @@ const MobileLayout = styled.div`
 
 export default () => {
   const { breakpoint } = useBreakpoint()
+  useEffect(() => {
+    console.log("BRk", breakpoint)
+  }, [breakpoint])
   if (breakpoint === "xs" || breakpoint === "sm") {
     return (
       <MobileLayout>
