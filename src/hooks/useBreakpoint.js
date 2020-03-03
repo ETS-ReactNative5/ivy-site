@@ -20,10 +20,15 @@ export default () => {
     getSizeFromWidth(typeof window !== `undefined` ? window.innerWidth : 321)
   )
   useLayoutEffect(() => {
-    console.log('LAYOUT EFFECT RAN')
+    console.log("LAYOUT EFFECT RAN")
+    console.log("LAYOUT", typeof window)
+    setSize(
+      getSizeFromWidth(typeof window !== `undefined` && window.innerWidth)
+    )
   }, [])
   useEffect(() => {
-    console.log('EFFECT RAN')
+    console.log("EFFECT RAN")
+    console.log("EFFECT", typeof window)
     setSize(
       getSizeFromWidth(typeof window !== `undefined` && window.innerWidth)
     )
