@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useMemo } from "react"
 import styled from "styled-components"
 import useBreakpoint from "src/hooks/useBreakpoint"
 import { Link } from "gatsby"
@@ -24,23 +24,26 @@ export default () => {
   useEffect(() => {
     console.log("BRk", breakpoint)
   }, [breakpoint])
-  if (breakpoint === "xs" || breakpoint === "sm") {
-    return (
-      <MobileLayout>
-        <Link to="/aspb">aspb</Link>
-        <Link to="/unum">unum</Link>
-        <Link to="/about">about</Link>
-        <Link to="/photography">photography</Link>
-      </MobileLayout>
-    )
-  } else {
-    return (
-      <DesktopLayout>
-        <Link to="/aspb">aspb</Link>
-        <Link to="/unum">unum</Link>
-        <Link to="/about">about</Link>
-        <Link to="/photography">photography</Link>
-      </DesktopLayout>
-    )
-  }
+  return useMemo(() => {
+    console.log("BREAKK", breakpoint)
+    if (breakpoint === "xs" || breakpoint === "sm") {
+      return (
+        <MobileLayout>
+          <Link to="/aspb">aspb</Link>
+          <Link to="/unum">unum</Link>
+          <Link to="/about">about</Link>
+          <Link to="/photography">photography</Link>
+        </MobileLayout>
+      )
+    } else {
+      return (
+        <DesktopLayout>
+          <Link to="/aspb">aspb</Link>
+          <Link to="/unum">unum</Link>
+          <Link to="/about">about</Link>
+          <Link to="/photography">photography</Link>
+        </DesktopLayout>
+      )
+    }
+  }, [breakpoint])
 }
