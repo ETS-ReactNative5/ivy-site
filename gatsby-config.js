@@ -3,5 +3,10 @@ require("dotenv").config({
 })
 
 module.exports = {
-  plugins: [`gatsby-plugin-styled-components`, "gatsby-plugin-root-import"],
+  plugins: [
+    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-root-import",
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+  ],
 }
