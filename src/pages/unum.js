@@ -4,6 +4,7 @@ import IntroPhotos from "src/components/unum/intro-photos"
 import IntroParagraph from "src/components/unum/intro-paragraph"
 import AppStore from "src/components/unum/app-store"
 import AppStoreCarousel from "src/components/unum/app-store-carousel"
+import ExportRedesignIntro from "src/components/unum/export-redesign-intro"
 
 export default () => {
   return (
@@ -12,6 +13,7 @@ export default () => {
       <IntroParagraph />
       <AppStore />
       <AppStoreCarousel />
+      <ExportRedesignIntro />
     </Layout>
   )
 }
