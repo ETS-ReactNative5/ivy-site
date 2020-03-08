@@ -7,7 +7,7 @@ const MasterContainer = styled.div`
   width: 100vw;
   box-sizing: border-box;
   min-height: 100vh;
-  background: lightgreen;
+  background: white;
   display: grid;
   grid-template: 1fr / 200px 1fr;
   @media (max-width: 768px) {

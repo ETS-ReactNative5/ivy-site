@@ -30,8 +30,9 @@ export default () => (
           Story Template Collections
         </Text>
         <Text>
-          The objective of this design was to create a user nterface that sorted
-          templates into collections and made it easily digestible for users.
+          The objective of this design was to create a user interface that
+          sorted templates into collections and made it easily digestible for
+          users.
         </Text>
       </div>
     </TextLayout>

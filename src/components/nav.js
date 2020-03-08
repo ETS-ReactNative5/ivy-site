@@ -7,7 +7,7 @@ const BaseLayout = styled.div`
 `
 
 const DesktopLayout = styled(BaseLayout)`
-  height: 400px;
+  height: fit-content;
   background: lightcoral;
   position: sticky;
   top: 0;
