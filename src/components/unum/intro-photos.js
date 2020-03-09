@@ -48,21 +48,24 @@ const Layout = ({ children }) => {
 
 const Arrow = styled.div`
   position: absolute;
-  width: 25px;
-  height: 25px;
-  background: red;
   cursor: pointer;
-  top: calc(50% + 25px);
-  bottom: calc(50% - 25px);
-  display: ${({ isVisible }) => (isVisible ? "initial" : "none")};
+  top: calc(50%);
+  bottom: calc(50%);
+  display: ${({ isVisible }) => (isVisible ? "inline-block" : "none")};
+
+  border: solid #aaa;
+  border-width: 0 3px 3px 0;
+  padding: 5px;
 `
 
 const RightArrow = styled(Arrow)`
-  right: 0;
+  transform: rotate(-45deg);
+  right: 6vw;
 `
 
 const LeftArrow = styled(Arrow)`
-  left: 0;
+  transform: rotate(135deg);
+  left: 6vw;
 `
 
 const Mobile = ({ children }) => {
