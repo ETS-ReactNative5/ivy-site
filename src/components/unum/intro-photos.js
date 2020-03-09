@@ -22,11 +22,11 @@ const MobileCarousel = styled.div`
   padding-top: 12vh;
   box-sizing: border-box;
   position: relative;
+  display: grid;
   & > *:nth-child(2) {
-    width: 100%;
+    width: 60%;
+    justify-self: center;
     box-sizing: border-box;
-    padding-left: 20vw;
-    padding-right: 20vw;
   }
   @media (min-width: 769px) {
     display: none;
@@ -35,6 +35,7 @@ const MobileCarousel = styled.div`
 
 const IntroPhoto = styled.img`
   max-width: 100%;
+  box-shadow: 0px 0px 40px 0px rgba(183, 183, 183, 0.15);
 `
 
 const Layout = ({ children }) => {
