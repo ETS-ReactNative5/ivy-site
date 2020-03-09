@@ -9,6 +9,10 @@ const Layout = styled.div`
   grid-template: max-content / repeat(5, 1fr);
   grid-gap: 10px;
   padding: 10vh 6vw;
+  @media (max-width: 768px) {
+    grid-template: max-content / repeat(5, 60%);
+    overflow: auto;
+  }
 `
 
 const Image = styled.img`

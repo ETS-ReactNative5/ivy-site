@@ -14,6 +14,9 @@ const MainLayout = styled.div`
   width: 100%;
   box-sizing: border-box;
   padding: 50vh 6vw;
+  @media (max-width: 768px) {
+    padding: 30vh 0;
+  }
 `
 
 const TextLayout = styled.div`

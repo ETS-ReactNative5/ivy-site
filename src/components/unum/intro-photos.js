@@ -28,7 +28,7 @@ const MobileCarousel = styled.div`
     padding-left: 20vw;
     padding-right: 20vw;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: none;
   }
 `

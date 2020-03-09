@@ -9,6 +9,10 @@ const Layout = styled.div`
   grid-template: max-content / 1fr 1fr;
   padding-left: 6vw;
   padding-right: 6vw;
+  @media (max-width: 768px) {
+    grid-template: max-content max-content / 1fr;
+    grid-gap: 10px;
+  }
 `
 
 const TextLayout = styled.div`

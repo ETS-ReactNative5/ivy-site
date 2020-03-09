@@ -11,6 +11,10 @@ const PhotoLayout = styled.div`
   grid-gap: 50px;
   padding-left: 6vw;
   padding-right: 6vw;
+  @media (max-width: 768px) {
+    grid-template: 1fr / repeat(auto-fill, minmax(calc(33% - 40px), 1fr));
+    grid-gap: 20px;
+  }
 `
 
 const TextLayout = styled.div`
@@ -27,6 +31,10 @@ const MainLayout = styled.div`
   padding-bottom: 30vh;
   & > *:first-child {
     margin-bottom: 10vh;
+  }
+  @media (max-width: 768px) {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
   }
 `
 

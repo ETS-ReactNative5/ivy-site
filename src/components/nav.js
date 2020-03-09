@@ -19,7 +19,7 @@ const DesktopLayout = styled(BaseLayout)`
 const MobileLayout = styled(BaseLayout)`
   background: lightskyblue;
   height: 25px;
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: none;
   }
 `
